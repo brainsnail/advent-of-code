@@ -22,7 +22,20 @@ func main() {
 		grid = append(grid, scanner.Text())
 	}
 	var treeHits = sled(grid, MovementRules{3, 1})
-	fmt.Printf("You hit this many trees: %d \n", treeHits)
+	fmt.Printf("You hit this many trees on one run: %d \n", treeHits)
+
+	goingCrazyWithTheSledding := []MovementRules{
+		{1, 1},
+		{3, 1},
+		{5, 1},
+		{7, 1},
+		{1, 2},
+	}
+	product := 1
+	for _, mr := range goingCrazyWithTheSledding {
+		product *= sled(grid, mr)
+	}
+	fmt.Printf("Upon many more sled runs, you hit this many trees: %d \n", product)
 }
 
 type MovementRules struct {
