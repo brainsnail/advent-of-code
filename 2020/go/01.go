@@ -22,7 +22,7 @@ func main() {
 		values[int(value)] = true
 	}
 
-	fmt.Println(find(values, 2020, 2))
+	fmt.Println(find(values, 2020, 3))
 }
 
 func find(values map[int]bool, sum, depth int) int {
